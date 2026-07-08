@@ -18,11 +18,11 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v2
 
-    - name: Restore NuGet Packages
-      run: nuget restore ExportToAveva_External.csproj
+- name: Restore NuGet Packages
+      run: msbuild /t:restore
 
     - name: Build x64 Release Executive
-      run: msbuild ExportToAveva_External.csproj /p:Configuration=Release /p:Platform=x64
+      run: msbuild /p:Configuration=Release /p:Platform=x64
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
