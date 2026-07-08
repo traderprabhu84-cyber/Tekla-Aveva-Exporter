@@ -18,7 +18,7 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v2
 
-- name: Restore NuGet Packages
+    - name: Restore NuGet Packages
       run: msbuild /t:restore
 
     - name: Build x64 Release Executive
@@ -29,4 +29,3 @@ jobs:
       with:
         name: ExportToAveva_EXE
         path: bin/x64/Release/net48/
-    
